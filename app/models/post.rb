@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  after_create :delete_post
   belongs_to :user
   has_many :comments, dependent: :destroy 
   has_many :tags, dependent: :destroy
